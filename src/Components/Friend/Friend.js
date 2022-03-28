@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 const Friend = ({ friend }) => {
   const { name, username, id } = friend;
 
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
   const showFriendDetail = (id) => {
     const path = `/friend/${id}`;
-    nevigate(path);
+    navigate(path);
   };
+
   return (
     <div className="App">
       <h1>This is friend component. </h1>
