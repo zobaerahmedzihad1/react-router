@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Friend = ({ friend }) => {
   const { name, username, id } = friend;
 
   const navigate = useNavigate();
-  const showFriendDetail = (id) => {
+  const showFriendDetail = () => {
     const path = `/friend/${id}`;
     navigate(path);
   };
@@ -14,7 +14,8 @@ const Friend = ({ friend }) => {
     <div className="App">
       <h1>This is friend component. </h1>
       <h2>Name : {name} </h2>
-      <button onClick={() => showFriendDetail(id)}>
+      <Link to={`/friend/${id}`}>Show Detail </Link>
+      <button onClick={showFriendDetail}>
         {username} Id: {id}{" "}
       </button>
     </div>
